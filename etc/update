@@ -4,11 +4,11 @@ echo '>> Fixing WSL mounts'
 fix-mounts
 
 lastfile=~/etc/latest-sync
-touch $lastfile
-last=$(cat ~/etc/latest-sync)
 now=$(date -u +%s)
+[[ -s $lastfile ]] || echo $now > $lastfile
+last=$(cat ~/etc/latest-sync)
 
-if [[ -n $last && $((now - last)) -ge $((23 * 60 * 60)) ]]
+if (( (now - last) >= (23 * 60 * 60) ))
 then
     echo '>> Updating Portage repositories'
     doas emerge --sync
@@ -16,7 +16,7 @@ then
     echo '>> Updating Portage packages'
     doas emerge --update --deep --with-bdeps=y @world
 
-    echo $last > $lastfile
+    echo $now > $lastfile
 else
     echo '>> Skipping Portage updates'
 fi
