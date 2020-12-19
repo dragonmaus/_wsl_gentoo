@@ -1,0 +1,15 @@
+[commit]
+	gpgsign = true
+[core]
+	autocrlf = false
+[gpg]
+	program = gpg2
+[pull]
+	rebase = false
+[push]
+	default = simple
+	followTags = true
+
+# Secret stuff
+[include]
+	path = ~/etc/secret/gitconfig

@@ -1,0 +1,10 @@
+/.*history
+/.cache/
+/.cargo/
+/.gnupg/
+/.local/
+/.rustup/
+/.ssh/
+/bin/
+/src/
+/tmp/

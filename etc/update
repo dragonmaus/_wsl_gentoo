@@ -1,0 +1,42 @@
+#!/bin/sh
+
+echo '>> Fixing WSL mounts'
+fix-mounts
+
+lastfile=~/etc/latest-sync
+touch $lastfile
+last=$(cat ~/etc/latest-sync)
+now=$(date -u +%s)
+
+if [[ -n $last && $((now - last)) -ge $((23 * 60 * 60)) ]]
+then
+    echo '>> Updating Portage repositories'
+    doas emerge --sync
+
+    echo '>> Updating Portage packages'
+    doas emerge --update --deep --with-bdeps=y @world
+
+    echo $last > $lastfile
+else
+    echo '>> Skipping Portage updates'
+fi
+
+if which nix > /dev/null 2>&1
+then
+    echo '>> Updating Nix channels'
+    nix-channel --update
+
+    echo '>> Updating Nix packages'
+    nix-env -iA nixpkgs.nix
+fi
+
+if which rustup
+then
+    echo '>> Updating rust'
+    rustup update
+fi
+
+echo ">> Updating python packages"
+python -m pip list --format=json --no-python-version-warning --not-required --user \
+| jq -r '.[] | .name' \
+| xargs -r python -m pip install -U --no-python-version-warning --upgrade-strategy=eager --user
