@@ -30,7 +30,7 @@ then
     nix-env -iA nixpkgs.nix
 fi
 
-if which rustup
+if which rustup > /dev/null 2>&1
 then
     echo '>> Updating rust'
     rustup update
