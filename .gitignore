@@ -3,6 +3,7 @@
 /.cargo/
 /.gnupg/
 /.local/
+/.npm/
 /.rustup/
 /.ssh/
 /bin/
