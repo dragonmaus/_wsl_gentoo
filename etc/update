@@ -9,13 +9,16 @@ last=$(cat ~/etc/latest-sync)
 now=$(date -u +%Y%m%d)
 if (( now > last ))
 then
-    echo '>> Updating Portage repositories'
+    echo $now > $lastfile
+
+    echo '>> Updating repositories'
     doas emerge --sync
 
-    echo '>> Updating Portage packages'
+    echo '>> Updating packages'
     doas emerge --update --deep --with-bdeps=y @world
 
-    echo $now > $lastfile
+    echo '>> Removing orphaned packages'
+    doas emerge --depclean
 else
     echo '>> Skipping Portage updates'
 fi
@@ -35,7 +38,24 @@ then
     rustup update
 fi
 
-echo ">> Updating python packages"
+if ! which pip > /dev/null 2>&1
+then
+    echo '>> Installing pip'
+    f=`mktemp`
+    curl -L -o "$f" https://bootstrap.pypa.io/get-pip.py
+    python "$f" --user -qq
+    rm -f "$f"
+fi
+
+echo '>> Updating python packages'
 python -m pip list --format=json --no-python-version-warning --not-required \
 | jq -r '.[] | .name' \
 | xargs -r python -m pip install -U --no-python-version-warning --upgrade-strategy=eager --user
+
+if [[ -d "$0.d" ]]
+then
+    for f in "$0.d"/*.sh
+    do
+        [[ -x "$f" ]] && . "$f"
+    done
+fi
