@@ -2,15 +2,6 @@
 
 # User-specific shell profile
 
-# Enforce `separation of concerns' between login and interactive shells
-shell=`basename $SHELL`
-shell=${shell:-sh}
-case $- in
-(*i*)
-  exec $shell -l -c 'exec $shell -i "$@"' $shell "$@"
-  ;;
-esac
-
 # Ensure that `echo' is sane
 case "$KSH_VERSION" in
 (*'MIRBSD KSH'*|*'LEGACY KSH'*|*'PD KSH'*)
@@ -30,6 +21,15 @@ case "$KSH_VERSION" in
       ;;
     esac
   }
+  ;;
+esac
+
+# Enforce `separation of concerns' between login and interactive shells
+shell=`basename $SHELL`
+shell=${shell:-sh}
+case $- in
+(*i*)
+  exec $shell -l -c 'exec $shell -i "$@"' $shell "$@"
   ;;
 esac
 
