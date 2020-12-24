@@ -44,7 +44,7 @@ DATA=${XDG_DATA_HOME:-~/.local/share}
 path=
 ifs=$IFS
 IFS=:
-for d in ~/bin ~/.cargo/bin ~/.local/bin ~/bin/ext $PATH /mnt/c/Windows/System32
+for d in ~/bin ~/.cargo/bin ~/.local/bin ~/bin/ext $PATH /mnt/c/Windows /mnt/c/Windows/System32
 do
   case /$d/ in
   (*/.nix-profile/*|*/nix/*)
