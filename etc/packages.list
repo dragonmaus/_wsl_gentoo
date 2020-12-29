@@ -1,0 +1,10 @@
+app-admin/doas
+app-editors/neovim
+app-misc/jq
+app-portage/mirrorselect
+app-portage/repoman
+app-shells/dash
+app-shells/mksh
+dev-vcs/git
+media-gfx/qrencode
+net-libs/nodejs
