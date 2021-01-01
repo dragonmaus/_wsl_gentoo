@@ -19,6 +19,7 @@ else
 fi
 
 echo '>> Updating packages'
+doas emerge --update --oneshot sys-apps/portage
 doas emerge --update --deep --newuse --with-bdeps=y @world
 
 echo '>> Removing orphaned packages'
