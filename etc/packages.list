@@ -1,4 +1,5 @@
 app-admin/doas
+app-arch/p7zip
 app-editors/neovim
 app-misc/jq
 app-portage/mirrorselect
