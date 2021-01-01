@@ -5,36 +5,37 @@
 # Ensure that `echo' is sane
 case "$KSH_VERSION" in
 (*'MIRBSD KSH'*|*'LEGACY KSH'*|*'PD KSH'*)
-  echo() {
-    print -R "$@"
-  }
-  ;;
+    echo() {
+        print -R "$@"
+    }
+    ;;
 (*)
-  echo() {
-    case "$1" in
-    (-n)
-      shift
-      printf '%s' "$*"
-      ;;
-    (*)
-      printf '%s\n' "$*"
-      ;;
-    esac
-  }
-  ;;
+    echo() {
+        case "$1" in
+        (-n)
+            shift
+            printf '%s' "$*"
+            ;;
+        (*)
+            printf '%s\n' "$*"
+            ;;
+        esac
+    }
+    ;;
 esac
 
 # Enforce `separation of concerns' between login and interactive shells
-shell=`basename $SHELL`
+shell=$(basename "$SHELL")
 shell=${shell:-sh}
 case $- in
 (*i*)
-  exec $shell -l -c 'exec $shell -i "$@"' $shell "$@"
-  ;;
+    exec $shell -l -c 'exec $shell -i "$@"' $shell "$@"
+    ;;
 esac
 
 # Pull in Nix configuration
-test -e ~/.nix-profile/etc/profile.d/nix.sh && . ~/.nix-profile/etc/profile.d/nix.sh
+nix=~/.nix-profile/etc/profile.d/nix.sh
+[[ -e $nix ]] && . $nix
 
 # XDG directories
 CONF=${XDG_CONFIG_HOME:-~/.config}
@@ -44,21 +45,21 @@ DATA=${XDG_DATA_HOME:-~/.local/share}
 path=
 ifs=$IFS
 IFS=:
-for d in ~/bin ~/.cargo/bin ~/.local/bin ~/bin/ext $PATH /mnt/c/Windows /mnt/c/Windows/System32
+for d in ~/bin ~/.cargo/bin ~/.local/bin ~/.local/games ~/bin/ext $PATH /mnt/c/Windows /mnt/c/Windows/System32
 do
-  case /$d/ in
-  (*/.nix-profile/*|*/nix/*)
-    ;;
-  (*)
-    d=`realpath $d 2> /dev/null || echo $d`
-    ;;
-  esac
-  case ":$path:" in
-  (*:$d:*)
-    continue
-    ;;
-  esac
-  path=$path:$d
+    case /$d/ in
+    (*/.nix-profile/*|*/nix/*)
+        ;;
+    (*)
+        d=$(realpath $d 2> /dev/null || echo $d)
+        ;;
+    esac
+    case ":$path:" in
+    (*:$d:*)
+        continue
+        ;;
+    esac
+    path=$path:$d
 done
 IFS=$ifs
 path=${path#:}
@@ -67,14 +68,15 @@ path=${path#:}
 set -a
 
 ## Paths
+MANPATH=$DATA/man:
 PATH=$path
 
 ## Shell configuration
 ENV=$CONF/shell/init.sh
 
 ## Global configuration
-EDITOR=`which nvim vim vi 2> /dev/null | head -1`
-HOSTNAME=${HOSTNAME:-`hostname -s`}
+EDITOR=$(which nvim vim vi 2> /dev/null | head -1)
+HOSTNAME=${HOSTNAME:-$(hostname -s)}
 PAGER=less; MANPAGER="$PAGER -s"
 
 ## App-specific configuration
