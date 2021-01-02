@@ -7,7 +7,7 @@ fix-mounts
 lastfile=~/etc/latest-sync
 : >> $lastfile
 last=$(cat ~/etc/latest-sync)
-now=$(date -u +%Y%m%d)
+now=$(date +%Y%m%d)
 if (( now <= last ))
 then
     echo '>> Skipping repository updates'
