@@ -9,3 +9,4 @@ app-shells/mksh
 dev-vcs/git
 media-gfx/qrencode
 net-libs/nodejs
+www-client/lynx
