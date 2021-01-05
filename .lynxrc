@@ -64,10 +64,9 @@ case_sensitive_searching=off
 #    Korean
 #    Taipei (Big5)
 #    Vietnamese (VISCII)
-#    Transparent
+#    windows-1250
 #    Eastern European (ISO-8859-2)
 #    Eastern European (cp852)
-#    Eastern European (windows-1250)
 #    Latin 3 (ISO-8859-3)
 #    Latin 4 (ISO-8859-4)
 #    Baltic Rim (ISO-8859-13)
@@ -336,7 +335,7 @@ verbose_images=on
 # will be enabled.  These keys are only lower case.
 # Capital 'H', 'J' and 'K will still activate help, jump shortcuts,
 # and the keymap display, respectively.
-vi_keys=on
+vi_keys=off
 
 # The visited_links setting controls how Lynx organizes the information
 # in the Visited Links Page.
