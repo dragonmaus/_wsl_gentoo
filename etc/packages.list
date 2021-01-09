@@ -6,6 +6,7 @@ app-portage/mirrorselect
 app-portage/repoman
 app-shells/dash
 app-shells/mksh
+app-text/cmark
 dev-vcs/git
 media-gfx/qrencode
 net-libs/nodejs
