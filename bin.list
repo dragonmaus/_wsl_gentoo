@@ -1,6 +1,7 @@
 abspath
 cdiff
 dircp
+fsync
 gensum
 lndir
 pathsort
