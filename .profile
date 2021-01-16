@@ -68,16 +68,15 @@ path=${path#:}
 set -a
 
 ## Paths
-MANPATH=$DATA/man:
+MANPATH=$DATA/man:$MANPATH
 PATH=$path
 
 ## Shell configuration
 ENV=$CONF/shell/init.sh
 
 ## Global configuration
-EDITOR=$(which nvim vim vi 2> /dev/null | head -1)
+EDITOR=nvim
 HOSTNAME=${HOSTNAME:-$(hostname -s)}
-PAGER=less; MANPAGER="$PAGER -s"
 
 ## App-specific configuration
 LESS=FMRXi
