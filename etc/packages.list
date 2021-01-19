@@ -1,12 +1,13 @@
 app-admin/doas
 app-arch/p7zip
 app-editors/neovim
+app-eselect/eselect-sh
 app-misc/jq
 app-portage/mirrorselect
 app-portage/repoman
-app-shells/dash
 app-shells/mksh
 app-text/cmark
+dev-util/redo
 dev-vcs/git
 media-gfx/graphicsmagick
 media-gfx/qrencode
