@@ -1,4 +1,4 @@
-#!/bin/mksh
+#!/bin/sh
 
 echo '>> Fixing WSL mounts'
 fix-mounts
@@ -17,12 +17,14 @@ else
 	echo '>> Skipping repository update'
 fi
 
-echo '>> Updating packages'
+echo '>> Updating Portage'
 doas emerge --update --oneshot sys-apps/portage
+
+echo '>> Updating packages'
 doas emerge --update --deep --newuse @world
 
 echo '>> Removing orphaned packages'
-doas emerge --depclean
+doas emerge --depclean --verbose n
 
 echo '>> Updating package list'
 list=~/etc/packages.list
