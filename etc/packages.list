@@ -1,7 +1,9 @@
 app-admin/doas
 app-arch/p7zip
 app-editors/neovim
+app-eselect/eselect-repository
 app-eselect/eselect-sh
+app-eselect/eselect-vi
 app-misc/jq
 app-portage/mirrorselect
 app-portage/repoman
