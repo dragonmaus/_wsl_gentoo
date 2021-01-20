@@ -11,4 +11,5 @@ dev-util/redo
 dev-vcs/git
 media-gfx/graphicsmagick
 media-gfx/qrencode
+sci-mathematics/calc
 www-client/lynx
