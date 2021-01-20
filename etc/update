@@ -32,16 +32,6 @@ cat /var/lib/portage/world > $list{new}
 cmp -s $list{new} $list || mv -f $list{new} $list
 rm -f $list{new}
 
-## Nix
-if which nix > /dev/null 2>&1
-then
-	echo '>> Updating Nix channels'
-	nix-channel --update
-
-	echo '>> Updating Nix packages'
-	nix-env -iA nixpkgs.nix
-fi
-
 ## Rust
 if which rustup > /dev/null 2>&1
 then
