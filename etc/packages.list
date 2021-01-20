@@ -5,13 +5,10 @@ app-eselect/eselect-repository
 app-eselect/eselect-sh
 app-eselect/eselect-vi
 app-misc/jq
-app-portage/mirrorselect
-app-portage/repoman
 app-shells/mksh
 app-text/cmark
 dev-util/redo
 dev-vcs/git
 media-gfx/graphicsmagick
 media-gfx/qrencode
-net-libs/nodejs
 www-client/lynx
