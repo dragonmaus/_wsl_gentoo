@@ -20,7 +20,7 @@ ifs=$IFS
 IFS=:
 for d in ~/bin ~/sbin ~/.cargo/bin ~/.local/bin $PATH
 do
-	d=$(readlink -f 2> /dev/null || echo $d)
+	d=$(readlink -f $d 2> /dev/null || echo $d)
 	case ":$path:" in
 	(*:$d:*)
 		continue
