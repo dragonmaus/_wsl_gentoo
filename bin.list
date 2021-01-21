@@ -1,11 +1,16 @@
 abspath
+cargo-foreach
 cdiff
 dircp
 fsync
 gensum
+git-ignore
 lndir
 pathsort
+purge
 qdiff
 qr
+ratio
 relpath
 shar
+yamlfmt
