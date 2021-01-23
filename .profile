@@ -47,7 +47,6 @@ HOSTNAME=${HOSTNAME:-$(hostname -s)}
 PAGER=less
 
 ## App-specific configuration
-GPG_TTY=$(tty)
 LESS=FMRXi
 LESSHISTFILE=-
 RIPGREP_CONFIG_PATH=$CONF/ripgrep.conf
