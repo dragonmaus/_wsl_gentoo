@@ -13,7 +13,7 @@ esac
 path=
 ifs=$IFS
 IFS=:
-for d in ~/bin ~/sbin ~/.cargo/bin ~/.local/bin $PATH
+for d in ~/bin ~/sbin ~/.cargo/bin ~/.local/bin ~/.local/python/bin $PATH
 do
 	d=$(readlink -f $d 2> /dev/null || echo $d)
 	case ":$path:" in
@@ -44,6 +44,7 @@ PAGER=less
 ## App-specific configuration
 LESS=FMRXi
 LESSHISTFILE=-
+PYTHONUSERBASE=~/.local/python
 RIPGREP_CONFIG_PATH=~/.config/ripgrep.conf
 
 set +a
