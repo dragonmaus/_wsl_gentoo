@@ -2,17 +2,12 @@
 # User-specific login shell profile
 
 # Enforce `separation of concerns' between login and interactive shells
-shell=$(basename "$SHELL")
-: ${shell:=sh}
+shell=$(basename $SHELL)
 case $- in
 (*i*)
 	exec $shell -l -c 'exec $shell -i "$@"' $shell "$@"
 	;;
 esac
-
-# XDG directories
-CONF=${XDG_CONFIG_HOME:-~/.config}
-DATA=${XDG_DATA_HOME:-~/.local/share}
 
 # Clean up and augment PATH
 path=
@@ -35,7 +30,7 @@ path=${path#:}
 set -a
 
 ## Paths
-MANPATH=$DATA/man:$MANPATH
+MANPATH=~/.local/share/man:$MANPATH
 PATH=$path
 
 ## Shell configuration
@@ -49,6 +44,6 @@ PAGER=less
 ## App-specific configuration
 LESS=FMRXi
 LESSHISTFILE=-
-RIPGREP_CONFIG_PATH=$CONF/ripgrep.conf
+RIPGREP_CONFIG_PATH=~/.config/ripgrep.conf
 
 set +a
