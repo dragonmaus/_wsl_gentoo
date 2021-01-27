@@ -39,10 +39,9 @@ ENV=~/.shrc
 ## Global configuration
 EDITOR=nvim
 HOSTNAME=${HOSTNAME:-$(hostname -s)}
-PAGER=less
 
 ## App-specific configuration
-LESS=FMRXi
+LESS=i
 LESSHISTFILE=-
 PYTHONUSERBASE=~/.local/python
 RIPGREP_CONFIG_PATH=~/.config/ripgrep.conf
