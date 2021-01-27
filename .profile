@@ -41,7 +41,7 @@ EDITOR=nvim
 HOSTNAME=${HOSTNAME:-$(hostname -s)}
 
 ## App-specific configuration
-LESS=i
+LESS=Ri
 LESSHISTFILE=-
 PYTHONUSERBASE=~/.local/python
 RIPGREP_CONFIG_PATH=~/.config/ripgrep.conf
