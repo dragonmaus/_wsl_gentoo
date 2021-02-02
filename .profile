@@ -1,13 +1,5 @@
 # ~/.profile
-# User-specific login shell profile
-
-# Enforce `separation of concerns' between login and interactive shells
-shell=$(basename $SHELL)
-case $- in
-(*i*)
-	exec $shell -l -c 'exec $shell -i "$@"' $shell "$@"
-	;;
-esac
+# User-level login shell configuration
 
 # Clean up and augment PATH
 path=
@@ -33,14 +25,13 @@ set -a
 MANPATH=~/.local/share/man:$MANPATH
 PATH=$path
 
-## Shell configuration
+## Interactive shell configuration
 ENV=~/.shrc
 
 ## Global configuration
 EDITOR=nvim
-HOSTNAME=${HOSTNAME:-$(hostname -s)}
 
-## App-specific configuration
+## Command-specific configuration
 LESS=Ri
 LESSHISTFILE=-
 PYTHONUSERBASE=~/.local/python
