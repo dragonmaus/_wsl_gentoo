@@ -13,7 +13,6 @@ esac
 # Clean up environment
 HISTFILE=/dev/null  # some shells don't close HISTFILE when it's merely unset
 unset HISTFILE
-unset LS_COLORS
 
 # Define aliases
 alias doas='doas '
