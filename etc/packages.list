@@ -6,6 +6,7 @@ app-eselect/eselect-sh
 app-eselect/eselect-vi
 app-misc/jq
 app-shells/dash
+app-shells/loksh
 app-shells/mksh
 app-text/cmark
 dev-util/elfkickers
