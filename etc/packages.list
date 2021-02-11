@@ -7,12 +7,12 @@ app-eselect/eselect-vi
 app-misc/jq
 app-shells/dash
 app-shells/loksh
-app-shells/mksh
 app-text/cmark
+dev-lang/rust
+dev-python/pynvim
 dev-util/elfkickers
 dev-util/redo
 dev-vcs/git
 media-gfx/graphicsmagick
 media-gfx/qrencode
-sci-mathematics/calc
 www-client/lynx
