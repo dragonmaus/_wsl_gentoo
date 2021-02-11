@@ -15,4 +15,6 @@ dev-util/redo
 dev-vcs/git
 media-gfx/graphicsmagick
 media-gfx/qrencode
+net-misc/youtube-dl
 www-client/lynx
+www-misc/buku
