@@ -8,7 +8,10 @@ app-misc/jq
 app-shells/dash
 app-shells/loksh
 app-text/cmark
+dev-lang/janet
+dev-lang/nasm
 dev-lang/rust
+dev-lisp/clisp
 dev-python/pynvim
 dev-util/elfkickers
 dev-util/redo
