@@ -28,6 +28,12 @@ list=~/etc/packages.list
 cat /var/lib/portage/world > $list{new}
 cmp -s $list{new} $list || mv -f $list{new} $list
 rm -f $list{new}
+simple=~/etc/packages.simple
+cut -d / -f 2 < $list \
+| sort -u \
+> $simple{new}
+cmp -s $simple{new} $simple || mv -f $simple{new} $simple
+rm -f $simple{new}
 
 ## Rust
 if which rustup > /dev/null 2>&1
