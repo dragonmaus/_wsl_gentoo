@@ -1,5 +1,8 @@
 #!/bin/sh
 
+echo '>> Fixing WSL mounts'
+fix-mounts
+
 ## System
 lastfile=~/etc/latest-sync
 touch $lastfile
