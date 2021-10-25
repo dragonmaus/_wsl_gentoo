@@ -1,5 +1,6 @@
 app-admin/doas
 app-arch/p7zip
+app-arch/zip
 app-editors/neovim
 app-eselect/eselect-repository
 app-eselect/eselect-sh
