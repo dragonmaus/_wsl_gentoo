@@ -2,7 +2,7 @@
 
 cd /
 
-for D in C D E F G U
+for D in C D E F G H U
 do
     d=$(echo $D | tr A-Z a-z)
     while doas umount /mnt/$d 2> /dev/null
