@@ -22,6 +22,7 @@ pynvim
 qrencode
 redo
 rust
+virtualenv
 wheel
 yt-dlp
 zip

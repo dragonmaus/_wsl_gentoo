@@ -14,6 +14,7 @@ dev-lang/nasm
 dev-lang/rust
 dev-lisp/clisp
 dev-python/pynvim
+dev-python/virtualenv
 dev-python/wheel
 dev-util/elfkickers
 dev-util/redo
