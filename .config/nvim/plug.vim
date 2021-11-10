@@ -11,5 +11,6 @@ call plug#begin(stdpath('data') . '/plug')
 Plug 'editorconfig/editorconfig-vim'
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-eunuch'
+Plug 'cespare/vim-toml'
 
 call plug#end()
