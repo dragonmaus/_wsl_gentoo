@@ -12,5 +12,6 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-eunuch'
 Plug 'cespare/vim-toml'
+Plug 'cheap-glitch/vim-v'
 
 call plug#end()
