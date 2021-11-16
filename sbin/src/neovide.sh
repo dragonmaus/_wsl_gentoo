@@ -1,2 +1,2 @@
 #!/bin/sh
-exec ~david/.cargo/bin/neovide.exe "$@"
+exec ~david/scoop/persist/rustup-msvc/.cargo/bin/neovide.exe "$@"
