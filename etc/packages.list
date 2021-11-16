@@ -9,6 +9,7 @@ app-misc/jq
 app-shells/dash
 app-shells/loksh
 app-text/cmark
+app-text/tree
 dev-lang/janet
 dev-lang/nasm
 dev-lang/rust
