@@ -4,18 +4,8 @@ echo '>> Fixing WSL mounts'
 fix-mounts
 
 ## System
-lastfile=~/etc/latest-sync
-touch $lastfile
-read -r last < $lastfile
-now=$(date -u +%s)
-if [ -z "$last" -o $((now - last)) -ge $((2 * 24 * 60 * 60)) ]
-then
-	echo '>> Updating repositories'
-	doas emerge --sync \
-	&& echo $now > $lastfile
-else
-	echo '>> Skipping repository update'
-fi
+echo '>> Updating repositories'
+doas emerge --sync
 
 echo '>> Updating Portage'
 doas emerge --update --oneshot sys-apps/portage
