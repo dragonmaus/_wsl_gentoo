@@ -44,6 +44,15 @@ then
 	echo '>> Updating rust'
 	rustup update
 fi
+if [ -s ~/src/rust/remote.list ]
+then
+	echo '>> Updating rust packages'
+	for p in $(< ~/src/rust/remote.list)
+	do
+		echo " - $p"
+		cargo install $p
+	done
+fi
 
 ## Python
 python=$(which python python3 python2 2> /dev/null | head -1)
