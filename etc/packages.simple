@@ -2,9 +2,13 @@ dash
 doas
 git
 graphicsmagick
+httpie
 jq
 loksh
 neovim
 p7zip
+pip
 qrencode
 rust
+wheel
+yt-dlp

@@ -29,11 +29,6 @@ cmp -s $simple{new} $simple || mv -f $simple{new} $simple
 rm -f $simple{new}
 
 ## Rust
-if which rustup > /dev/null 2>&1
-then
-	echo '>> Updating rust'
-	rustup update
-fi
 if [ -s ~/src/rust/remote.list ]
 then
 	echo '>> Updating rust packages'
@@ -48,14 +43,7 @@ fi
 python=$(which python python3 python2 2> /dev/null | head -1)
 if [ -n "$python" ]
 then
-	if ! $python -m pip --version > /dev/null 2>&1
-	then
-		echo '>> Installing pip'
-		$python -m ensurepip --user --default-pip
-	fi
-
-	echo '>> Updating pip'
-	$python -m pip install --user --upgrade pip
+	# Pip is managed by the system
 
 	echo '>> Updating Python packages'
 	$python -m pip list --user --not-required --format freeze \

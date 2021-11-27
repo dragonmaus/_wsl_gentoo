@@ -5,6 +5,10 @@ app-misc/jq
 app-shells/dash
 app-shells/loksh
 dev-lang/rust
+dev-python/pip
+dev-python/wheel
 dev-vcs/git
 media-gfx/graphicsmagick
 media-gfx/qrencode
+net-misc/httpie
+net-misc/yt-dlp
